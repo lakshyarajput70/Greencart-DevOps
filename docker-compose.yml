@@ -8,8 +8,8 @@ services:
       - "4000:4000"
     env_file:
       - ./server/.env
-    restart: unless-stopped
-
+    restart: unless-stopped  
+  
   frontend:
     build: ./client
     container_name: greencart-frontend

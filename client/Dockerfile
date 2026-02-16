@@ -11,7 +11,8 @@ RUN npm run build
 # Production stage
 FROM nginx:alpine
 
-ENV BACKEND_HOST=backend:4000
+ENV BACKEND_HOST=backend
+# ENV BACKEND_HOST=backend:4000
 #ENV BACKEND_HOST=backend
 #ENV BACKEND_PORT=4000
 
