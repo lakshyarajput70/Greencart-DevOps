@@ -3,4 +3,3 @@ node_modules
 # Ignore all .env files recursively in all folders
 **/.env
 dist/
-greencart-k8s/

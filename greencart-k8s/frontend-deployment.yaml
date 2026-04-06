@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: greencart-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: greencart-frontend
+  template:
+    metadata:
+      labels:
+        app: greencart-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: lakshyakumar70/greencart-frontend:v6
+        env:
+           - name: BACKEND_HOST
+             value: backend-service
+        ports:
+        - containerPort: 80

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: greencart-config
+data:
+  NODE_ENV: "production"
+  SELLER_EMAIL: "admin@greencart.com"
+  VITE_API_URL: "http://backend:4000"
+  CLOUDINARY_CLOUD_NAME: "db4x8a0uh"
+  STRIPE_PUBLISHABLE_KEY: "pk_test_51RnfE8R14kEKveCAxeD4vSVnEewLEhU3SKTxaYVSR4Sj6RdbV3jvRAgnqPVvGOwx451jeglonmRYg5TjRyg2pmwc00lbpL6zn9"
