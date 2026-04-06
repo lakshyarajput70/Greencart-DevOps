@@ -3,3 +3,5 @@ node_modules
 # Ignore all .env files recursively in all folders
 **/.env
 dist/
+# Ignore ONLY secret file
+greencart-k8s/greencart-secret.yaml
