@@ -6,9 +6,6 @@ Grocery MERN
 npm run dev
 https://greencart-frontend-ashy.vercel.app/
 
-Adding Google Fonts:
-Search for Outfit font → copy embed code → paste into index.html
-
 ------------------------
 
 # Seller / Backend Section
@@ -19,16 +16,18 @@ https://greencart-backend-4otx.onrender.com
 
 ------------------------
 
-Git Safe Setup (No Secrets):
 
-rm -rf .git
-git init
-echo ".env" >> .gitignore
-git add .
-git commit -m "Initial commit without secrets"
-git remote add origin https://github.com/lakshyawork70/GreenCart.git
-git push -u origin main
+------dockerization---
+docker compose up --build -d
+docker compose down
 
+
+docker compose -f docker-compose.dev.yml up
+--docker compose -f docker-compose.dev.yml up -d --build
+docker compose -f docker-compose.dev.yml down
+ 
+
+--------------------------------
 
 #app.use('/api/user',userRouter)
 #app.use('/api/seller',sellerRouter)
