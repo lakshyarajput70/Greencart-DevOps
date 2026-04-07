@@ -4,15 +4,13 @@ Grocery MERN
 
 # Client Section
 npm run dev
-https://greencart-frontend-ashy.vercel.app/
-
+'https://greencart-dev-ops.vercel.app'
 ------------------------
 
 # Seller / Backend Section
 http:xxxx/seller
 
 npm run server
-https://greencart-backend-4otx.onrender.com
 
 https://greencart-devops.onrender.com
 

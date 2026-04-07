@@ -6,8 +6,7 @@ Grocery MERN
 #client section
 --npm run dev
 
-https://greencart-frontend-ashy.vercel.app/
-
+'https://greencart-dev-ops.vercel.app'
 ------------------------
 Seller
 
