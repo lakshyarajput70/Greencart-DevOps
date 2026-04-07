@@ -16,6 +16,8 @@ npm run server
 
 https://greencart-backend-4otx.onrender.com
 
+https://greencart-devops.onrender.com
+
 ------dockerization---
 docker compose up --build -d
 docker compose down
