@@ -15,15 +15,15 @@ pipeline {
             }
         }
 
-        stage('Pull Latest Images') {
+        stage('Rebuild Fresh Images') {
             steps {
-                bat 'docker compose pull'
+                bat 'docker compose build --no-cache'
             }
         }
 
         stage('Start Containers') {
             steps {
-                bat 'docker compose up -d --build'
+                bat 'docker compose up -d'
             }
         }
 
