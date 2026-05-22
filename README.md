@@ -25,3 +25,6 @@ docker compose -f docker-compose.dev.yml down
 
 
 
+
+jenkins local workspace -
+cd C:\ProgramData\Jenkins\.jenkins\workspace\green-cart-deployment
