@@ -1,0 +1,74 @@
+pipeline {
+    agent any
+
+    environment {
+        FRONTEND_IMAGE = "lakshyakumar70/greencart-frontend:v6"
+        BACKEND_IMAGE  = "lakshyakumar70/greencart-backend:v4"
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Verify Kubernetes') {
+            steps {
+                bat 'kubectl get nodes'
+            }
+        }
+
+        stage('Build Backend Image') {
+            steps {
+                bat 'docker build -t %BACKEND_IMAGE% ./server'
+            }
+        }
+
+        stage('Build Frontend Image') {
+            steps {
+                bat 'docker build -t %FRONTEND_IMAGE% ./client'
+            }
+        }
+
+        stage('Docker Login') {
+            steps {
+                withCredentials([usernamePassword(
+                    credentialsId: 'dockerhub-creds',
+                    usernameVariable: 'DOCKER_USER',
+                    passwordVariable: 'DOCKER_PASS'
+                )]) {
+                    bat 'docker login -u %DOCKER_USER% -p %DOCKER_PASS%'
+                }
+            }
+        }
+
+        stage('Push Images') {
+            steps {
+                bat 'docker push %BACKEND_IMAGE%'
+                bat 'docker push %FRONTEND_IMAGE%'
+            }
+        }
+
+        stage('Deploy Kubernetes Resources') {
+            steps {
+                bat 'kubectl apply -f greencart-k8s/'
+            }
+        }
+
+        stage('Restart Deployments') {
+            steps {
+                bat 'kubectl rollout restart deployment/greencart-backend'
+                bat 'kubectl rollout restart deployment/greencart-frontend'
+            }
+        }
+
+        stage('Verify Deployment') {
+            steps {
+                bat 'kubectl get pods'
+                bat 'kubectl get svc'
+            }
+        }
+    }
+}

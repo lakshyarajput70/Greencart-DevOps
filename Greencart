@@ -27,7 +27,12 @@ docker compose -f docker-compose.dev.yml up
 docker compose -f docker-compose.dev.yml down
  
 
+docker compose -f docker-compose-image.yml up -d 
+docker compose -f docker-compose-image.yml down
 --------------------------------
 
 #app.use('/api/user',userRouter)
 #app.use('/api/seller',sellerRouter)
+
+
+Docker/K8s f=6 , b=4;ECS f=7,b=5
