@@ -35,4 +35,4 @@ docker compose -f docker-compose-image.yml down
 #app.use('/api/seller',sellerRouter)
 
 
-Docker/K8s f=6 , b=4;ECS f=7,b=5
+Docker/K8s f=6 , b=4;  ECS f=8,b=5

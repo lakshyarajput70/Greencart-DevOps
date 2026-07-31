@@ -24,6 +24,8 @@ docker compose -f docker-compose.dev.yml up
 docker compose -f docker-compose.dev.yml down
 
 
+for local - it will woek on copy file of dockerfile frontend and default.
+for ECS its another setup
 
 
 jenkins local workspace -
